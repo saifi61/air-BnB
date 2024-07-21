@@ -1,0 +1,65 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+.navbar {
+  /* border: 2px solid; */
+  padding: 22px 36px;
+  height: 70px;
+  display: flex;
+  box-shadow: 0px 3px 7.5px rgba(0, 0, 0, 0.1);
+}
+.navbar > img {
+  max-width: 100px;
+}
+
+.hero--section {
+  padding: 26px 36px;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero--section > img {
+  /* padding-left: 40px; */
+  max-width: 600px;
+  align-self: center;
+}
+.hero--section > h1 {
+  font-size: 36px;
+  font-weight: bold;
+  padding-top: 32px;
+  margin: 0;
+}
+.hero--section > p {
+  padding-top: 16px;
+  margin: 0;
+  max-width: 320px;
+  font-size: 16px;
+}
+
+.card {
+  padding: 30px 18px;
+  width: 250px;
+  line-height: 8px;
+  word-spacing: 2px;
+}
+.card > img {
+  margin-bottom: 9px;
+  width: 100%;
+}
+.card > p {
+  font-size: 12px;
+}
+.card--rating > img {
+  width: 15px;
+}
+.card--rating > span {
+  color: #918e9b;
+}
+.card--charge > span {
+  color: #222222;
+  font-weight: 600;
+}
