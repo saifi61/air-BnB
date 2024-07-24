@@ -1,3 +1,4 @@
+import data from "./data";
 
 let root = document.querySelector("#root");
 function Navbar() {
@@ -18,25 +19,60 @@ function Hero() {
         </main>
     )
 }
-function Card() {
+function Card(props) {
+    console.log(props);
     return (
         <div className="card">
-            <img src="./images/image 12.png"></img>
-            <p className="card--rating"><img src="./images/star 1.png"></img> 5.0 <span>(6).USA</span></p>
-            <p>Life lessons with Katie Zaferes</p>
-            <p className="card--charge"><span>FROM $136</span> / person</p>
+            <img src={`./images/${props.img}`}></img>
+            <p className="card--rating"><img src="./images/star 1.png"></img> {props.rating}<span> ({props.reviewCount}). {props.location}</span></p>
+            <p>{props.title}</p>
+            <p className="card--charge"><span>FROM ${props.price}</span> / person</p>
         </div>
     )
 }                       
 
 function App() {
-    return (
-        <div>
-            <Navbar />
-            <Hero />
-            <Card />
-            <Card />
-        </div>
-    )
+    // <Hero />
+const cards = data.map(item => {
+return(
+    <Card 
+        img={item.coverImg}
+        rating={item.stats.rating}
+        reviewCount={item.stats.reviewCount}
+        location={item.location}
+        title={item.title}
+        price={item.price}
+    />
+)
+})        
+
+return (
+<div>
+    <Navbar />
+    {cards}
+</div>
+)
 }
+
+// function App() {
+//     const cards = data.map(item => {
+//         return (
+//             <Card 
+//                 img={item.coverImg}
+//                 rating={item.stats.rating}
+//                 reviewCount={item.stats.reviewCount}
+//                 location={item.location}
+//                 title={item.title}
+//                 price={item.price}
+//             />
+//         )
+//     })
+    
+//     return (
+//         <div>
+//             <Navbar />
+//             {cards}
+//         </div>
+//     )
+// }
 ReactDOM.render(<App />,root);
