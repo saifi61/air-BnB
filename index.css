@@ -40,26 +40,60 @@ body {
   font-size: 16px;
 }
 
+.cards-list {
+  padding: 20px;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 20px;
+  overflow-x: auto;
+}
+
 .card {
-  padding: 30px 18px;
-  width: 250px;
-  line-height: 8px;
-  word-spacing: 2px;
-}
-.card > img {
-  margin-bottom: 9px;
-  width: 100%;
-}
-.card > p {
+  width: 175px;
   font-size: 12px;
+  flex: 0 0 auto;         /* ADD */
+  display: flex;          /* ADD */
+  flex-direction: column; /* ADD */
+  position: relative;
 }
-.card--rating > img {
-  width: 15px;
+
+.card--image {
+  width: 100%;
+  border-radius: 9px;
+  margin-bottom: 9px;
 }
-.card--rating > span {
-  color: #918e9b;
+
+/* ADD */
+.card--title {
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-.card--charge > span {
-  color: #222222;
-  font-weight: 600;
+
+.card--stats {
+  display: flex;
+  align-items: center;
+}
+
+.card--star {
+  height: 14px;
+}
+
+/* ADD */
+.card--price {
+  margin-top: auto;
+}
+.bold {
+  font-weight: bold;
+}
+.gray {
+  color: gray;
+}
+.card--badge{
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  background-color: white;
+  padding: 5px 7px;
+  border-radius: 2px;
+  font-weight: bold;
 }
